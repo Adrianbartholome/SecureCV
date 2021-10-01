@@ -7,7 +7,7 @@ I needed a security system for my office, but didn't have the money to buy one. 
 Press 'C' when you're ready. That viewer will close and the Jeopardy theme song will play, giving you time to get out of the room. After the song ends, 
 the security camera will kick in. It opens a viewer, and takes a picture every 5 seconds. It compares the current frame against that picture to detect
 movement. If movement is detected, it plays a studpid warning sound that I made (Dummy.mp3), records the video, saving it to the hard drive, and sends a 
-text message to me.
+text message to me. Press 'Q' to quit the program.
 
 There are some bugs. 1) Sometimes the sound plays twice almost simultaneously. 2) I get an error because the script tries to access the audio output 
 even when it's already initiated. 3) I can't figure out what exception I need to impliment to avoid script failure in the event that the network is 
