@@ -10,8 +10,8 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 # twilio stuff for sms
-account_sid = 'AC643de91a85a60ef70f0bac09f2c649c0'
-auth_token = '2b0bc8a17d4b11c8d245cfb8f9d5ab59'
+account_sid = '###############################'
+auth_token = '###############################'
 client = Client(account_sid, auth_token)
 
 action = False
@@ -39,7 +39,7 @@ vlc.MediaPlayer('Jeopardy.mp3').play()
 time.sleep(35)
 
 video = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-out = cv2.VideoWriter("C://Users//Youan//PycharmProjects//SecureCV//capture.avi",
+out = cv2.VideoWriter("C://Path-to-where-you-want-your-video-saved",
                           cv2.VideoWriter_fourcc(*'XVID'), 30, (640, 480))
 
 
@@ -81,8 +81,8 @@ while video:
 
     # take comparison picture every 5 seconds
     if time.time() > end:
-        background = cv2.imwrite(filename="C://Users//Youan//PycharmProjects//SecureCV//background.png", img=frame)
-        background = cv2.imread("C://Users//Youan//PycharmProjects//SecureCV//background.png")
+        background = cv2.imwrite(filename="C://Path-to-where-you-want-to-save-comparison-image", img=frame)
+        background = cv2.imread("C://Same-as-previous-path")
         background = cv2.cvtColor(background, cv2.COLOR_BGR2GRAY)
         background = cv2.GaussianBlur(background, (21, 21), 0)
         end = time.time() + 5
@@ -109,8 +109,10 @@ while video:
                 message = client.messages \
                     .create(
                         body="movement detected.",
-                        from_='+14078076067',
-                        to='+14795612547'
+                        # your twilio number
+                        from_='+15555555555',
+                        # your actual number
+                        to='+15555555555'
                     )
             # TODO TEST THESE
             except TwilioRestException as e:
@@ -142,7 +144,7 @@ while video:
 
 # kill everything when exiting and open folder location
 stop_run_continuously.set()
-webbrowser.open("C://Users//Youan//PycharmProjects//SecureCV")
+webbrowser.open("C://Path-to-wherever-you-saved-video")
 
 out.release()
 video.release()
