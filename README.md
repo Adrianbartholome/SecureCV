@@ -1,5 +1,5 @@
 # SecureCV
-My shitty security system.
+My makeshift security system.
 
 Made using OpenCV, VLC, Twilio.
 
@@ -10,7 +10,7 @@ movement. If movement is detected, it plays a studpid warning sound that I made 
 text message to me. Press 'Q' to quit the program.
 
 There are some bugs. 1) Sometimes the sound plays twice almost simultaneously. 2) I get an error because the script tries to access the audio output 
-even when it's already initiated. 3) I can't figure out what exception I need to impliment to avoid script failure in the event that the network is 
+even when it's already initiated. 3) I can't figure out what exception I need to implement to avoid script failure in the event that the network is 
 down (error happens because it is trying to reach twilio to send me a message).
 
 That said, it all works 99% of the time. I'll work out the bugs when I have time (HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAH)
